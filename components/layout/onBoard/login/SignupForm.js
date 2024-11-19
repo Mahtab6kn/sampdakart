@@ -95,7 +95,7 @@ const SignupForm = ({ isAnimated, setIsAnimated }) => {
         }
 
         const otpData = await otpResponse.json();
-
+        console.log({ otp: otpData });
         const sendOtpResponse = await fetch(
           `https://api.authkey.io/request?authkey=ea048f1e37474761&mobile=${
             phoneNumber || user.phoneNumber
@@ -107,6 +107,7 @@ const SignupForm = ({ isAnimated, setIsAnimated }) => {
         } else {
           setIsOtpSent(true);
           setTimer(60);
+          console.log("Check");
 
           resolve(otpData);
         }

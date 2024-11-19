@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/heroSection/carousel/download1.jpg"
+            src="/home/mi-4.jpeg"
             alt="image 1"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 960px) 0vw, 33vw"
-            src="/home/heroSection/carousel/download2.jpg"
+            src="/home/mi-5.jpeg"
             alt="image 2"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -46,7 +46,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/heroSection/carousel/download3.png"
+            src="/home/mi-3.jpeg"
             alt="image 3"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -54,7 +54,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/heroSection/carousel/download4.png"
+            src="/home/mi-4.jpeg"
             alt="image 4"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -63,7 +63,7 @@ const HeroSection = () => {
 
       <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative rounded-xl bg-black">
         <Image
-          src="/home/heroSection/suit.jpg"
+          src="/home/mi-banner.jpg"
           alt="hero banner"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

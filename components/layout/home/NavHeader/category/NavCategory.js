@@ -58,14 +58,17 @@ function NavCategory() {
       </MenuHandler>
 
       <MenuList>
-        {categories.map((category, index) => (
+        {categories?.map((category, index) => (
           <Menu placement="left-start" allowHover key={index} offset={15}>
             <MenuHandler className="flex items-center justify-between capitalize">
               <MenuItem className="capitalize">{category.name}</MenuItem>
             </MenuHandler>
 
             <MenuList>
-              <Link key={index} href={`/category/${category.name.replaceAll(" ", "-")}`}>
+              <Link
+                key={index}
+                href={`/category/${category.name.replaceAll(" ", "-")}`}
+              >
                 <MenuItem className="capitalize">{category.name}</MenuItem>
               </Link>
 
@@ -73,7 +76,10 @@ function NavCategory() {
                 return (
                   <Link
                     key={index}
-                    href={`/category/${category.name.replaceAll(" ", "-")}/${sub.name.replaceAll(" ", "-")}`}
+                    href={`/category/${category.name.replaceAll(
+                      " ",
+                      "-"
+                    )}/${sub.name.replaceAll(" ", "-")}`}
                     className="outline-none capitalize"
                   >
                     <MenuItem>{sub.name}</MenuItem>

@@ -24,9 +24,9 @@ export default function Page() {
       <CategoriesYouMayLike />
       {/* <DiscountSection /> */}
       <MostBookedProduct />
-      <SareeCollection />
-      <LehengaCollection />
-      <SuitCollection />
+      {/* <SareeCollection /> */}
+      {/* <LehengaCollection /> */}
+      {/* <SuitCollection /> */}
       <StateSection />
       <WeOffer />
       <HomeBanner />
