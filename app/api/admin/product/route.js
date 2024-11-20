@@ -34,30 +34,36 @@ export async function POST(request) {
     const sizes = JSON.parse(formData.get("sizes"));
     const files = formData.getAll("images");
 
-    if (
-      !title ||
-      !price ||
-      !discount ||
-      !description ||
-      !category ||
-      !subCategory ||
-      !visibility ||
-      !fabric ||
-      !brand
-    ) {
+    if (!title) {
       return NextResponse.json(
-        { error: "All fields are required." },
+        { error: "Product title is required." },
         { status: 400 }
       );
     }
-
-    if (sizes.length < 1) {
+    if (!price) {
       return NextResponse.json(
-        { error: "Add a minimum of 1 size!" },
+        { error: "price field is required." },
         { status: 400 }
       );
     }
-
+    if (!category) {
+      return NextResponse.json(
+        { error: "Please select the category." },
+        { status: 400 }
+      );
+    }
+    if (!brand) {
+      return NextResponse.json(
+        { error: "Brand field is required." },
+        { status: 400 }
+      );
+    }
+    if (!description) {
+      return NextResponse.json(
+        { error: "Description is required." },
+        { status: 400 }
+      );
+    }
     if (files.length < 4) {
       return NextResponse.json(
         { error: "Add a minimum of 4 images!" },
