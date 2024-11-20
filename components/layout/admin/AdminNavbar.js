@@ -193,15 +193,15 @@ export default function AdminNavbar() {
   }, []);
 
   return (
-    <div className="w-full shadow-sm px-4 pb-2">
+    <div className="w-full shadow-sm px-4">
       <div className="flex items-center justify-between text-blue-gray-900">
         <Link href={"/"}>
-          <div className="min-w-[110px]">
+          <div className="">
             <Image
-              src="/balmukundlogo.png"
+              src="/sampdakart-logo.png"
               alt="brand"
-              width={150}
-              height={150}
+              width={120}
+              height={20}
             />
           </div>
         </Link>

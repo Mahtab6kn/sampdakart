@@ -7,7 +7,6 @@ const ProductSchema = new Schema(
     subCategory: {
       type: Object,
       lowercase: true,
-      required: true,
       trim: true,
     },
 
@@ -51,7 +50,6 @@ const ProductSchema = new Schema(
     discount: {
       type: Number,
       default: 0,
-      required: true,
     },
 
     description: {
@@ -77,7 +75,6 @@ const ProductSchema = new Schema(
           type: String,
           lowercase: true,
           trim: true,
-          required: true,
         },
 
         colours: [
@@ -87,21 +84,18 @@ const ProductSchema = new Schema(
                 type: String,
                 lowercase: true,
                 trim: true,
-                required: true,
               },
 
               hex: {
                 type: String,
                 trim: true,
                 lowercase: true,
-                required: true,
               },
             },
 
             quantity: {
               type: Number,
               trim: true,
-              required: true,
             },
 
             _id: false,
@@ -113,7 +107,6 @@ const ProductSchema = new Schema(
 
     fabric: {
       type: String,
-      required: true,
       lowercase: true,
     },
 

@@ -5,9 +5,9 @@ import HeaderCategory from "./category/HeaderCategory";
 const Nav = () => {
   return (
     <>
-      <Marquee />
       <NavHeader />
       <HeaderCategory />
+      <Marquee />
     </>
   );
 };

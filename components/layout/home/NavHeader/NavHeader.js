@@ -52,11 +52,16 @@ const NavHeader = () => {
   }, []);
 
   return (
-    <Navbar className="sticky top-0 z-50 h-max max-w-full rounded-none px-4 py-1 lg:px-8 lg:py-1">
+    <Navbar className="sticky top-0 z-50 h-max max-w-full rounded-none px-4 py-1 lg:px-8 lg:py-2">
       <div className="flex items-center justify-between">
         <Link href="/">
-          <div className="block sm:max-w-[140px] max-w-[115px]">
-            <Image src="/ghosting.png" alt="logo" width={75} height={20} />
+          <div className="block">
+            <Image
+              src="/sampdakart-logo.png"
+              alt="logo"
+              width={120}
+              height={20}
+            />
           </div>
         </Link>
 

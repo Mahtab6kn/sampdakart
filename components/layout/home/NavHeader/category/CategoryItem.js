@@ -13,7 +13,7 @@ const CategoryItem = ({ category }) => {
       <MenuHandler>
         <Link
           href={`/category/${category.name.replaceAll(" ", "-")}`}
-          className="cursor-pointer capitalize"
+          className="cursor-pointer capitalize text-gray-800"
         >
           {category.name}
         </Link>
@@ -27,7 +27,7 @@ const CategoryItem = ({ category }) => {
                 " ",
                 "-"
               )}/${sub.name.replaceAll(" ", "-")}`}
-              className="outline-none capitalize"
+              className="outline-none capitalize text-black"
             >
               <MenuItem>{sub.name}</MenuItem>
             </Link>

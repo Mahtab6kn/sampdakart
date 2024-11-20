@@ -15,7 +15,7 @@ const Marquee = () => {
   ];
 
   return (
-    <div className="overflow-x-hidden bg-white py-1 w-full">
+    <div className="overflow-x-hidden bg-white  w-full">
       <div className="animate-marquee whitespace-nowrap">
         {marqueeItems.map((item, index) => (
           <span key={index} className="text-sm text-red-500 mx-4">

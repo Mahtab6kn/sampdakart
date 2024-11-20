@@ -133,19 +133,24 @@ const Page = () => {
   const submitForm = async (e) => {
     e.preventDefault();
 
-    if (
-      !formData.title ||
-      !formData.price ||
-      !formData.discount ||
-      !formData.description ||
-      !formData.category ||
-      !formData.subCategory.name
-    ) {
-      toast.error("All fields are required.");
+    if (!formData.title) {
+      toast.error("Product title is required.");
       return;
     }
-    if (formData.sizes.length < 1) {
-      toast.error("Add a minimum of 1 size!");
+    if (!formData.price) {
+      toast.error("Price is required.");
+      return;
+    }
+    if (!formData.category) {
+      toast.error("Please select the category");
+      return;
+    }
+    if (!formData.description) {
+      toast.error("Description is required.");
+      return;
+    }
+    if (!formData.brand) {
+      toast.error("Brand is required.");
       return;
     }
     if (formData.images.length < 4) {
