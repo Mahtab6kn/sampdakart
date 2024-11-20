@@ -195,16 +195,16 @@ export default function AdminNavbar() {
   return (
     <div className="w-full shadow-sm px-4 pb-2">
       <div className="flex items-center justify-between text-blue-gray-900">
-        {/* <Link href={"/"}> */}
-        <div className="min-w-[110px]">
-          <Image
-            src="/balmukundlogo.png"
-            alt="brand"
-            width={150}
-            height={150}
-          />
-        </div>
-        {/* </Link> */}
+        <Link href={"/"}>
+          <div className="min-w-[110px]">
+            <Image
+              src="/balmukundlogo.png"
+              alt="brand"
+              width={150}
+              height={150}
+            />
+          </div>
+        </Link>
         <div className="hidden xl:block w-full">
           <NavList />
         </div>

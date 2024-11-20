@@ -19,10 +19,11 @@ import {
   Textarea,
 } from "@material-tailwind/react";
 import CreateProductSize from "@/components/layout/admin/products/CreateProductSize";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 const Page = () => {
   const { id } = useParams();
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
     price: "",
@@ -159,6 +160,7 @@ const Page = () => {
       const data = await response.json();
       if (response.ok) {
         toast.success("Product updated successfully!");
+        router.back();
       } else {
         toast.error(data.error);
       }
