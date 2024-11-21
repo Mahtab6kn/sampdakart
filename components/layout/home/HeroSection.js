@@ -63,7 +63,7 @@ const HeroSection = () => {
 
       <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative bg-black">
         <Image
-          src="/home/sampdaKart-banner.jpg"
+          src="/home/sampdakart-banner.jpg"
           alt="hero banner"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
