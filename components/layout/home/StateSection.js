@@ -1,108 +1,95 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { GiChessKing, GiCutDiamond, GiWorld, GiFactory } from "react-icons/gi"; // Example icons
+import React, { useState } from "react";
+import {
+  Card,
+  CardBody,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+import {
+  MusicalNoteIcon,
+  GlobeAltIcon,
+  TruckIcon,
+  StarIcon,
+} from "@heroicons/react/24/outline";
 
-const StatsCard = ({ Icon, number, label, duration }) => {
-  const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
+const features = [
+  {
+    icon: MusicalNoteIcon,
+    title: "Quality Instruments",
+    description: "Experience the finest sounds with our premium instruments.",
+  },
+  {
+    icon: StarIcon,
+    title: "Trusted by Many",
+    description: "Join our community of satisfied customers worldwide.",
+  },
+  {
+    icon: GlobeAltIcon,
+    title: "Global Reach",
+    description: "Delivering cultural heritage across the globe.",
+  },
+  {
+    icon: TruckIcon,
+    title: "Fast Shipping",
+    description: "Reliable and quick delivery to your doorstep.",
+  },
+];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setIsVisible(true); // Start counting when the element is in view
-        }
-      },
-      { threshold: 0.5 } // 50% of the card should be visible
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return; // Only start counting if the element is visible
-
-    let start = 0;
-    const end = parseInt(number);
-    if (start === end) return;
-
-    let incrementTime = (duration / end) * 1000; // Calculate time per increment
-    let timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start >= end) {
-        setCount(end); // Ensure it ends on the exact number
-        clearInterval(timer);
-      }
-    }, incrementTime);
-
-    return () => clearInterval(timer); // Clean up the interval on component unmount
-  }, [isVisible, number, duration]);
+export default function StateSection() {
+  const [hoveredCard, setHoveredCard] = useState("");
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center justify-center text-center p-4"
-    >
-      <div className="w-20 h-20 rounded-full flex items-center justify-center bg-red-100 hover:scale-110 transition-transform duration-300 ease-in-out">
-        <Icon className="w-10 h-10" color="red" />
+    <div className="bg-gradient-to-r from-orange-500 via-orange-300 to-orange-500 text-white py-16 relative overflow-hidden mb-5">
+      <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=800')] opacity-10 bg-repeat"></div>
+      <div className="max-w-7xl mx-auto text-center px-4 relative z-10">
+        <Typography
+          variant="h1"
+          color="white"
+          className="mb-6 animate-fade-in-down"
+        >
+          Discover the Magic of Sampdakart
+        </Typography>
+        <Typography
+          variant="lead"
+          color="white"
+          className="mb-12 max-w-2xl mx-auto animate-fade-in-up"
+        >
+          Immerse yourself in the rich cultural tapestry of Ayodhya with our
+          curated selection of musical instruments and divine statues.
+        </Typography>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <Card
+              key={index}
+              className={`mt-6 bg-white/90 backdrop-filter backdrop-blur-sm transition-all duration-300 ease-in-out transform ${
+                hoveredCard === index ? "scale-105 shadow-lg" : ""
+              }`}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <CardBody className="flex flex-col items-center p-6">
+                <IconButton
+                  color="amber"
+                  className={`mb-4 rounded-full p-5 ${
+                    hoveredCard === index ? "animate-bounce" : ""
+                  }`}
+                >
+                  <feature.icon className="h-6 w-6" />
+                </IconButton>
+                <Typography variant="h5" color="blue-gray" className="mb-2">
+                  {feature.title}
+                </Typography>
+                <Typography color="gray" className="text-center font-normal">
+                  {feature.description}
+                </Typography>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
       </div>
-      <div className="text-4xl font-bold mt-4 text-red-600">{count}+</div>
-      <div className="text-gray-600 mt-2">{label}</div>
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white/10 to-transparent"></div>
     </div>
   );
-};
-
-const StateSection = () => {
-  return (
-    <div className="pt-5 pb-12 bg-white">
-      <h2 className="text-3xl font-bold text-blue-600 text-center mb-8">
-        Why Choose GhostingTech E-Commerce?
-      </h2>
-      <p className="text-center text-gray-700 mb-12 px-5 md:mx-32">
-        GhostingTech E-Commerce sets the standard with cutting-edge designs,
-        top-tier fabrics, and unmatched craftsmanship. Discover a new level of
-        style with us—where innovation seamlessly blends with elegance and
-        quality.
-      </p>
-      <div className="grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        <StatsCard
-          Icon={GiChessKing}
-          number="32"
-          label="Years in Textile Industry"
-          duration={2}
-        />
-        <StatsCard
-          Icon={GiCutDiamond}
-          number="1000"
-          label="Retailers, Traders, Wholesalers"
-          duration={3}
-        />
-        <StatsCard
-          Icon={GiWorld}
-          number="30"
-          label="Countries Exported To"
-          duration={2}
-        />
-        <StatsCard
-          Icon={GiFactory}
-          number="10"
-          label="Lacs Pieces Per Month"
-          duration={2}
-        />
-      </div>
-    </div>
-  );
-};
-
-export default StateSection;
+}

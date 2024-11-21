@@ -30,7 +30,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/mi-4.jpeg"
+            src="/home/mi-1.jpeg"
             alt="image 1"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 960px) 0vw, 33vw"
-            src="/home/mi-5.jpeg"
+            src="/home/inst-2.avif"
             alt="image 2"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -46,7 +46,7 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/mi-3.jpeg"
+            src="/home/inst-1.jpg"
             alt="image 3"
             className="h-full w-full object-cover object-top md:object-center"
           />
@@ -54,16 +54,16 @@ const HeroSection = () => {
           <Image
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            src="/home/mi-4.jpeg"
+            src="/home/inst-4.jpg"
             alt="image 4"
             className="h-full w-full object-cover object-top md:object-center"
           />
         </Carousel>
       </div>
 
-      <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative rounded-xl bg-black">
+      <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative bg-black">
         <Image
-          src="/home/mi-banner.jpg"
+          src="/home/sampdaKart-banner.jpg"
           alt="hero banner"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

@@ -4,20 +4,20 @@ import React from "react";
 export default function YoutubeVideo() {
   const videos = [
     {
-      url: "https://www.youtube.com/embed/FGsun_yYgb4?si=h-3ndo8O9zSmwAmy",
+      url: "https://www.youtube.com/embed/KBYSpR8N6pc?si=oFEfNhh-ywTkXe0u",
     },
     {
-      url: "https://www.youtube.com/embed/SkgrkCTRZfw?si=-cnGe2oz35afJizD",
+      url: "https://www.youtube.com/embed/oUxQ0KUU-eY?si=50u0IwMC6IYXkhxY",
     },
     {
-      url: "https://www.youtube.com/embed/fUmSkEvet08?si=LLlNTl9dqBg2mT6z",
+      url: "https://www.youtube.com/embed/kXUJGVdLHC8?si=l9XfM8MRyaxy-AoO",
     },
   ];
 
   return (
     <section className="mb-10">
       <div className="text-center w-full lg:w-1/2 mx-auto">
-        <h2 className="text-red-600 text-2xl font-semibold">
+        <h2 className="text-amber-600 text-2xl font-semibold">
           Most Popular Latest Videos From Our Youtube Channel
         </h2>
         <p className="text-gray-600 mt-2">
@@ -48,7 +48,7 @@ export default function YoutubeVideo() {
         <Link
           target="_blank"
           href={"https://www.youtube.com/@riddhisumanfabricsz/videos"}
-          className="text-sm rounded-full border border-teal-500 capitalize px-6 py-2 hover:shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out"
+          className="text-sm rounded-full border border-amber-500 capitalize px-6 py-2 hover:shadow-lg hover:bg-amber-500 hover:text-white transition-all duration-300 ease-in-out"
         >
           VIEW MORE
         </Link>

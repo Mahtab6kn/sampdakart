@@ -23,7 +23,7 @@ const TestimonialCard = ({ name, img, desc, cust, rating }) => {
     );
   }
   return (
-    <div className="bg-teal-300 p-6 rounded-lg text-center">
+    <div className="bg-gradient-to-r from-amber-50 to-amber-100 p-6 rounded-lg text-center">
       <div className="w-24 h-24 mx-auto rounded-full overflow-hidden mb-4">
         <img
           src={img}
@@ -31,9 +31,9 @@ const TestimonialCard = ({ name, img, desc, cust, rating }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="text-xl font-semibold text-white">{name}</h3>
-      <p className="text-sm text-white">{cust}</p>
-      <p className="mt-4 text-white">"{desc}"</p>
+      <h3 className="text-xl font-semibold">{name}</h3>
+      <p className="text-sm text-blue-gray-500">{cust}</p>
+      <p className="mt-4 text-gray-600">"{desc}"</p>
       <div className="mt-4 flex justify-center">
         <Rating stars={rating} />
       </div>

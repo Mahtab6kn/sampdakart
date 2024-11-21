@@ -51,7 +51,7 @@ const CategoriesYouMayLike = async () => {
       <div className="relative p-4 sm:p-8 bg-gray-50 space-y-12 text-center mb-10">
         <SectionHeading
           label="Categories You May Like"
-          className="text-blue-500"
+          className="text-[#FF8225]"
         />
 
         <Suspense fallback={<CategoryListSkeleton />}>
@@ -61,7 +61,7 @@ const CategoriesYouMayLike = async () => {
         <div className="mt-12 pb-6">
           <Link
             href="/category"
-            className="rounded-full border border-blue-500 capitalize px-8 py-3 hover:shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out mx-auto"
+            className="rounded-full border border-[#FF8225] capitalize px-8 py-3 hover:shadow-lg hover:bg-[#FF8225] hover:text-white transition-all duration-300 ease-in-out mx-auto"
           >
             View All
           </Link>

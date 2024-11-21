@@ -1,68 +1,74 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OwnerImageSection() {
   return (
     <div className="bg-white mx-4 mt-0 lg:mx-8 lg:mt-8 flex flex-col lg:flex-row gap-8">
-      <div className="w-full lg:w-1/3 flex justify-center">
+      <div className="w-full lg:w-1/3 flex justify-center animate-float">
         <Image
           src="/home/owner-2.png"
           alt="Award Ceremony"
           width={500}
           height={500}
-          className="rounded-lg object-cover max-h-[32rem] object-top"
+          className="rounded-lg object-cover max-h-[33rem] object-top"
         />
       </div>
 
-      <div className="w-full lg:w-2/3">
-        <h1 className="text-xl lg:text-3xl font-bold text-blue-600 mb-4">
-          GhostingTech E-Commerce - Rated #1 Most Trusted Textile Company in
-          Patna, Bihar (India)
+      <div className="w-full lg:w-2/3 bg-gradient-to-r from-amber-50 to-amber-100 p-5">
+        <h1 className="text-xl lg:text-3xl font-bold text-amber-600 mb-4">
+          Sampdakart - Your Trusted Source for Musical Instruments and Statues
         </h1>
         <p className="text-gray-700 mb-4">
-          Welcome to GhostingTech E-Commerce, where tradition meets elegance in
-          Indian ethnic wear. As a top choice for quality{" "}
-          <strong>Indian Lehenga, Sarees and Suits in Surat</strong>, we are
-          proud to offer a wide collection that combines classic craftsmanship
-          with modern style. Explore our range and find the beauty of Indian
-          sarees that reflect both tradition and creativity.
+          Welcome to Sampdakart, where tradition meets quality in our selection
+          of musical instruments and religious statues. Explore our range and
+          find the perfect piece to enhance your spiritual and cultural journey.
         </p>
         <ul className="list-none space-y-4 text-gray-700">
           <li className="flex items-start">
-            <span className="text-red-600 mr-2 hidden sm:block">&#10003;</span>
+            <span className="text-amber-500 mr-2 hidden sm:block">
+              &#10003;
+            </span>
             <p>
-              <strong>Diverse Range:</strong> Our collection includes many types
-              of sarees, from the classic Banarasi silk to the light and airy
-              georgette. No matter the occasion, we have the perfect saree to
-              match your style.
+              <strong>Diverse Selection:</strong> Discover a curated selection
+              of traditional instruments and exquisite statues, crafted to
+              perfectly resonate with your unique tastes.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-red-600 mr-2 hidden sm:block">&#10003;</span>
+            <span className="text-amber-500 mr-2 hidden sm:block">
+              &#10003;
+            </span>
             <p>
-              <strong>Quality Assurance:</strong> We focus on quality. Each
-              saree is made from high-quality fabrics and goes through strict
-              checks to make sure our customers get only the best.
+              <strong>Quality Craftsmanship:</strong> Each piece is crafted with
+              care to ensure the highest quality.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-red-600 mr-2 hidden sm:block">&#10003;</span>
+            <span className="text-amber-500 mr-2 hidden sm:block">
+              &#10003;
+            </span>
             <p>
-              <strong>Customization Options:</strong> We know that everyone has
-              different tastes. That's why we offer customization options, so
-              you can adjust your saree to fit your needs and make it uniquely
-              yours.
+              <strong>Customization Options:</strong> Customize your choices to
+              match your distinct preferences and requirements, ensuring a truly
+              personalized and satisfying experience.
             </p>
           </li>
           <li className="flex items-start">
-            <span className="text-red-600 mr-2 hidden sm:block">&#10003;</span>
+            <span className="text-amber-500 mr-2 hidden sm:block">
+              &#10003;
+            </span>
             <p>
-              <strong>Affordable Luxury:</strong> Enjoy the luxury of wearing
-              beautiful Indian sarees without spending too much. We are
-              dedicated to providing affordable, high-quality options, making
-              traditional Indian clothing available to everyone.
+              <strong>Affordable Prices:</strong>
+              Experience top-quality products at affordable prices, combining
+              luxury and value without exceeding your budget.
             </p>
           </li>
         </ul>
+        <Link href={"/category"}>
+          <button className="mt-6 bg-amber-500 hover:bg-amber-600 p-3">
+            Explore Now
+          </button>{" "}
+        </Link>
       </div>
     </div>
   );

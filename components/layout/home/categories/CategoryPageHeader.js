@@ -35,20 +35,20 @@ const CategoryPageHeader = ({ category, cat }) => {
         <Image
           fill
           // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          src={banner(categoryName)}
-          alt={categoryName}
+          src={"/home/sampdakart-banner.jpg"}
+          alt="banner"
           className=" w-full  object-fill"
         />
       </div>
       <div className="lg:flex md:flex block justify-between items-center">
         <div>
-          <p className="lg:text-4xl md:text-3xl text-2xl font-bold text-blue-500 uppercase">
+          <p className="lg:text-4xl md:text-3xl text-2xl font-bold text-amber-600 uppercase">
             Top booked {cat ? categoryName : categorySub}
           </p>
 
           {cat ? (
             <Breadcrumbs className="px-3 py-1 mt-2 mb-4">
-              <Link href={"/"} className="opacity-60 hover:text-blue-400">
+              <Link href={"/"} className="opacity-60 hover:text-amber-400">
                 <FaHome />
               </Link>
 

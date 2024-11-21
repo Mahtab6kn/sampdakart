@@ -6,7 +6,7 @@ export default function Testimonial() {
   return (
     <section className="bg-white text-black py-16">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-blue-500">
+        <h2 className="text-4xl font-bold text-amber-600">
           <strong>Our Clients</strong>
         </h2>
         <p className="mt-4 text-gray-600">

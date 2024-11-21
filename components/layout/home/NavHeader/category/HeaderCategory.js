@@ -20,7 +20,7 @@ const HeaderCategory = async () => {
   const categories = await fetchData();
 
   return (
-    <div className="lg:flex flex-wrap items-center justify-center bg-[#f1962d] lg:gap-6 md:gap-4 gap-3 text-white px-6 py-2 hidden">
+    <div className="lg:flex flex-wrap items-center justify-center bg-[#FF8225] lg:gap-6 md:gap-4 gap-3 text-white px-6 py-2 hidden">
       {/* <span className="text-black capitalize">Categories :</span> */}
 
       {categories.map((category) => (

@@ -56,7 +56,7 @@ const ProductCarousel = ({ products, label = "" }) => {
   return (
     <section className="my:0">
       {label.length !== 0 && (
-        <SectionHeading label={label} className="text-blue-500" />
+        <SectionHeading label={label} className="text-[#FF8225]" />
       )}
 
       <Suspense fallback={<ProductListSkeleton />}>

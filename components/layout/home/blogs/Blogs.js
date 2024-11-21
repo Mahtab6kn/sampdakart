@@ -41,7 +41,7 @@ export default function Blogs() {
     <>
       <section className="bg-white text-black py-5">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-500">
+          <h2 className="text-4xl font-bold text-amber-600">
             <strong>Latest Blogs</strong>
           </h2>
           <p className="mt-4 text-gray-600">
@@ -67,7 +67,7 @@ export default function Blogs() {
         <div className="flex justify-center items-center w-full my-6">
           <Link
             href={"/blogs"}
-            className="text-sm rounded-full border border-teal-500 capitalize px-6 py-2 hover:shadow-lg hover:bg-teal-500 hover:text-white transition-all duration-300 ease-in-out"
+            className="text-sm rounded-full border border-amber-500 capitalize px-6 py-2 hover:shadow-lg hover:bg-amber-500 hover:text-white transition-all duration-300 ease-in-out"
           >
             VIEW MORE
           </Link>

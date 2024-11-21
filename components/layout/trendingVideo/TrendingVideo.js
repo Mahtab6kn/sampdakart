@@ -32,7 +32,7 @@ export default function TrendingVideo() {
 
   return (
     <div className="container mx-auto py-5 px-5">
-      <h2 className="text-2xl font-bold mb-6 text-center text-blue-500">
+      <h2 className="text-2xl font-bold mb-6 text-center text-amber-600">
         <strong>Our Trending Videos</strong>
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">

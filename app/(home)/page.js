@@ -15,6 +15,7 @@ import SareeCollection from "@/components/layout/home/SareeCollection";
 import LehengaCollection from "@/components/layout/home/LehengaCollection";
 import SuitCollection from "@/components/layout/home/SuitCollection";
 import StateSection from "@/components/layout/home/StateSection";
+import BannerSection from "@/components/layout/home/BannerSection";
 // import DiscountSection from "@/components/layout/home/discount/DiscountSection";
 
 export default function Page() {
@@ -22,15 +23,15 @@ export default function Page() {
     <main>
       <HeroSection />
       <CategoriesYouMayLike />
-      {/* <DiscountSection /> */}
       <MostBookedProduct />
       {/* <SareeCollection /> */}
       {/* <LehengaCollection /> */}
       {/* <SuitCollection /> */}
       <StateSection />
-      <WeOffer />
+      {/* <WeOffer /> */}
       <HomeBanner />
       <OwnerImageSection />
+      <BannerSection />
       {/* <VisionSection /> */}
       <Testimonial />
       <Blogs />

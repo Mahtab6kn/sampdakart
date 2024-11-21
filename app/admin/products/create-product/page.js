@@ -259,9 +259,12 @@ const Page = () => {
           <Select
             label="Select Category"
             name="category"
-            value={formData.category}
-            onChange={handleCategoryChange}
+            value={formData.category || ""}
+            onChange={(e) => handleCategoryChange(e)}
           >
+            <Option value="" disabled>
+              Select a category
+            </Option>
             {categories.map((category) => (
               <Option key={category._id} value={category.name}>
                 {category.name}
