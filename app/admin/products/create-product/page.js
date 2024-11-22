@@ -271,7 +271,7 @@ const Page = () => {
           <Select
             label="Select Sub Category"
             name="subCategory"
-            value={`${formData.subCategory.name}~${formData.subCategory.colour}`}
+            value={`${formData?.subCategory?.name}~${formData?.subCategory?.colour}`}
             onChange={handleSubCategoryChange}
           >
             {selectedSubcategories.map((subcategory) => (
