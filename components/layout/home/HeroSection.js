@@ -61,9 +61,9 @@ const HeroSection = () => {
         </Carousel>
       </div>
 
-      <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative bg-black">
+      <div className="w-full lg:w-3/4 md:block hidden h-80 overflow-hidden relative bg-black rounded-xl">
         <Image
-          src="/home/sampdakart-banner.jpg"
+          src="/HeroBanner.jpg"
           alt="hero banner"
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}

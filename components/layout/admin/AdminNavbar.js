@@ -132,7 +132,7 @@ function NavList() {
             Orders
           </Button>
         </Link>
-        {/* <Link href={"/admin/blogs?page=1&size=12"}>
+        <Link href={"/admin/blogs?page=1&size=12"}>
           <Button
             className="whitespace-nowrap w-full justify-center flex items-center gap-2 rounded px-2"
             color="blue-gray"
@@ -142,7 +142,7 @@ function NavList() {
             <FaMicroblog size={20} />
             Blogs
           </Button>
-        </Link> */}
+        </Link>
         <Link href={"/admin/users?page=1&size=12"}>
           <Button
             className="whitespace-nowrap w-full justify-center flex items-center gap-2 rounded px-2"

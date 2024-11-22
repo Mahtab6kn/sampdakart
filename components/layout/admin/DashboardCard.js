@@ -21,14 +21,14 @@ const DashboardCard = ({ data }) => {
   const cardData = [
     {
       id: 1,
-      label: "Total distributor",
+      label: "Total Category",
       value: data.categoriesCount,
       color: "#FFC700",
       image: "/admin/dashboard/category.png",
     },
     {
       id: 2,
-      label: "Total dealers",
+      label: "Total SubCategory",
       value: data.subCategoriesCount,
       color: "#fb923c",
       image: "/admin/dashboard/subcategory.png",

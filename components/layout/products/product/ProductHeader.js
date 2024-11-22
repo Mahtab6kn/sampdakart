@@ -22,7 +22,7 @@ const ProductHeader = React.memo(
     return (
       <CardHeader
         floated={true}
-        className={`${isSet ? "h-[500px]" : "h-[420px]"}`}
+        className={`${isSet ? "h-[400px]" : "h-[320px]"}`}
       >
         {isSet ? (
           <div className="h-full w-full" style={gridStyle}>

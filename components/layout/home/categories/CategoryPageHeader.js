@@ -34,7 +34,7 @@ const CategoryPageHeader = ({ category, cat }) => {
       <div className=" hidden   lg:block w-full h-[111px]  sm:h-[400px] relative mb-5">
         <Image
           fill
-          src={"/home/sampdakart-banner.jpg"}
+          src={"/HeroBanner.jpg"}
           alt="banner"
           className=" w-full  object-fill"
         />
@@ -46,7 +46,7 @@ const CategoryPageHeader = ({ category, cat }) => {
           </p>
 
           {cat ? (
-            <Breadcrumbs className="px-3 py-1 mt-2 mb-4">
+            <Breadcrumbs className="px-3 py-1 mt-2  md:mb-4">
               <Link href={"/"} className="opacity-60 hover:text-amber-400">
                 <FaHome />
               </Link>
@@ -54,7 +54,7 @@ const CategoryPageHeader = ({ category, cat }) => {
               <p className="capitalize">{categoryName}</p>
             </Breadcrumbs>
           ) : (
-            <Breadcrumbs className="px-3 py-1 mt-2 mb-4">
+            <Breadcrumbs className="px-3 py-1 mt-2 md:mb-4">
               <Link href={"/"} className="opacity-60">
                 <FaHome />
               </Link>
