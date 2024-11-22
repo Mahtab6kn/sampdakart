@@ -47,7 +47,7 @@ export default function YoutubeVideo() {
       <div className="flex justify-center items-center w-full mt-6">
         <Link
           target="_blank"
-          href={"https://www.youtube.com/@riddhisumanfabricsz/videos"}
+          href="#"
           className="text-sm rounded-full border border-amber-500 capitalize px-6 py-2 hover:shadow-lg hover:bg-amber-500 hover:text-white transition-all duration-300 ease-in-out"
         >
           VIEW MORE

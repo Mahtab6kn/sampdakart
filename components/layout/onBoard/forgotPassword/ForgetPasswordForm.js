@@ -294,7 +294,7 @@ const ForgotPasswordForm = ({ isAnimated, setIsAnimated }) => {
         <div>Remember your password?</div>
 
         <Link
-          className=" text-blue-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
+          className=" text-amber-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
           href="/login"
         >
           Sign In

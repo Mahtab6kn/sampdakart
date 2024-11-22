@@ -1,9 +1,9 @@
 export default function Content() {
   return (
     <>
-      <div className="container p-5 bg-gradient-to-r from-amber-50 to-amber-100">
+      <div className="container p-5 bg-gradient-to-r from-amber-50 to-amber-100 mx-auto">
         <section className="mb-8">
-          <h1 className="text-2xl font-bold mb-4">
+          <h1 className="text-2xl font-bold mb-4 text-amber-600">
             Best Musical Instrument and Religious Statue Market
           </h1>
           <p className="text-gray-600 mb-4">
@@ -45,7 +45,7 @@ export default function Content() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">
+          <h2 className="text-xl font-semibold mb-4 text-amber-600">
             Musical Instruments for Every Enthusiast
           </h2>
           <p className="text-gray-600 mb-4">
@@ -79,7 +79,7 @@ export default function Content() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">
+          <h2 className="text-xl font-semibold mb-4 text-amber-600">
             Religious Statues for Devotion and Decor
           </h2>
           <p className="text-gray-600 mb-4">
@@ -113,7 +113,7 @@ export default function Content() {
         </section>
 
         <section className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">
+          <h2 className="text-xl font-semibold mb-4 text-amber-600">
             Wholesale Suppliers of Instruments and Statues
           </h2>
           <p className="text-gray-600 mb-4">

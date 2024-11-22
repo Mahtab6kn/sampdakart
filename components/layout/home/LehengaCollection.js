@@ -41,7 +41,7 @@ async function getLehengaProduct(params) {
   }
 }
 const LehengaCollection = async () => {
-  const data = await getLehengaProduct("lehenga");
+  const data = await getLehengaProduct("musical");
   if (data.length === 0) {
     return null;
   }
@@ -51,7 +51,7 @@ const LehengaCollection = async () => {
         {data.data && (
           <ProductCarousel
             products={data.data.data}
-            label="Lehenga Collection"
+            label="Musical Instrument Collection"
           />
         )}
       </Suspense>

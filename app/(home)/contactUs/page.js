@@ -15,7 +15,7 @@ const page = () => {
   return (
     <section className="p-6 text-gray-700">
       <div className="text-center">
-        <h2 className="text-blue-500 text-2xl font-semibold">
+        <h2 className="text-amber-500 text-2xl font-semibold">
           Contact Information
         </h2>
         <p className="mt-2 text-gray-600">
@@ -26,7 +26,7 @@ const page = () => {
 
       <div className="mt-6 space-y-4 w-full md:w-7/12 pl-2 md:pl-8 md:mx-auto">
         <div className="flex ">
-          <FaMapMarkerAlt className="text-blue-500 text-xl sm:text-lg mr-4" />
+          <FaMapMarkerAlt className="text-amber-500 text-xl sm:text-lg mr-4" />
           <div>
             <p className="font-semibold">Ghsoting Tech</p>
             <p>
@@ -37,7 +37,7 @@ const page = () => {
         </div>
 
         <div className="flex items-center">
-          <FaPhoneAlt className="text-blue-500 text-base mr-4" />
+          <FaPhoneAlt className="text-amber-500 text-base mr-4" />
           <div>
             <p>
               Call: <span className="font-semibold">+91-111-222-3333</span>
@@ -45,7 +45,7 @@ const page = () => {
           </div>
         </div>
         <div className="flex items-center">
-          <IoMailSharp className="text-blue-500 text-lg mr-4" />
+          <IoMailSharp className="text-amber-500 text-lg mr-4" />
           <div>
             <p>
               Mail:{" "}
@@ -56,7 +56,7 @@ const page = () => {
       </div>
 
       <div className="mt-8 text-center">
-        <h3 className="text-blue-500 text-lg font-semibold">FOLLOW US !!</h3>
+        <h3 className="text-amber-500 text-lg font-semibold">FOLLOW US !!</h3>
         <div className="flex justify-center mt-4 space-x-4">
           <Link
             href="https://www.youtube.com/"

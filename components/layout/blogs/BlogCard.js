@@ -35,7 +35,7 @@ const BlogCard = ({
     <>
       <Card className="w-full min-h-[510px] max-w-[26rem] shadow-lg border group pt-5">
         <div className="relative w-[350px] h-[250px] mx-auto flex items-center justify-center group ">
-          <div className="w-[320px] h-[210px] bg-teal-100 -rotate-12 rounded-md transition-transform duration-300 ease-in-out group-hover:rotate-12"></div>
+          <div className="w-[320px] h-[210px] bg-amber-100 -rotate-12 rounded-md transition-transform duration-300 ease-in-out group-hover:rotate-12"></div>
           <Image
             src={blog.image.url}
             alt="Blog Image"
@@ -46,7 +46,7 @@ const BlogCard = ({
         </div>
         <CardBody>
           <div className="flex justify-between mb-3">
-            <div className="text-center w-fit px-3 py-1 bg-teal-500 rounded-md text-sm text-white">
+            <div className="text-center w-fit px-3 py-1 bg-amber-500 rounded-md text-sm text-white">
               {blog.type}
             </div>
             <div className="text-gray-400 flex items-center">
@@ -98,7 +98,7 @@ const BlogCard = ({
           <Link href={`/blogs/${blog._id}`}>
             <Button
               size="lg"
-              color="teal"
+              color="amber"
               className="py-2 px-3 text-xs flex gap-[6px]"
             >
               Read More

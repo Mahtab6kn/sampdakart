@@ -298,7 +298,7 @@ const SignupForm = ({ isAnimated, setIsAnimated }) => {
   return (
     <div className="lg:w-10/12 w-11/12 max-w-md">
       <div className="flex flex-col justify-center items-center w-full">
-        <h1 className="text-4xl font-bold text-blue-500">Create account</h1>
+        <h1 className="text-4xl font-bold text-amber-500">Create account</h1>
 
         <form className="mt-8 w-full" onSubmit={handleSubmit} method="POST">
           <div className="flex flex-col items-center mb-6">
@@ -471,7 +471,7 @@ const SignupForm = ({ isAnimated, setIsAnimated }) => {
         <div>Already have an Account?</div>
 
         <button
-          className=" text-blue-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
+          className=" text-amber-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
           onClick={(e) => {
             setIsAnimated(!isAnimated);
           }}

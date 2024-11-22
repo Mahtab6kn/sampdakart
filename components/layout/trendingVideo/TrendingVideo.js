@@ -7,22 +7,22 @@ export default function TrendingVideo() {
 
   const videos = [
     {
-      src: "https://youtube.com/shorts/PAXEhwoni_c?si=KN2Bfj439vca52SB",
+      src: "https://www.youtube.com/shorts/jwxmkiiBuno",
     },
     {
-      src: "https://youtube.com/shorts/6pPGoNvosyg?si=fqAIPLY62jGXNOnA",
+      src: "https://www.youtube.com/shorts/YSFUd-I-msU",
     },
     {
-      src: "https://youtube.com/shorts/97gHNlMigMs?si=ZE_3C9b48f7Pj3DX",
+      src: "https://www.youtube.com/shorts/rqnY_2nZ03c",
     },
     {
-      src: "https://youtube.com/shorts/QYIyjw-P7zE?si=qgxqjGn5YUFSrszj",
+      src: "https://www.youtube.com/shorts/LSxy67gPNVo",
     },
     {
-      src: "https://youtube.com/shorts/rVDBxCgU5oA?si=WAFj4dqh1otlchl_",
+      src: "https://youtube.com/shorts/qEBpzelj-Ec?si=Dr5U6lKK3TQBn7F9",
     },
     {
-      src: "https://youtube.com/shorts/9AzqlleyFh8?si=Aks_G8331-sAIk6I",
+      src: "https://youtube.com/shorts/qSMkGvhyfPk?si=33j3Skk94ziSMGSn",
     },
   ];
 

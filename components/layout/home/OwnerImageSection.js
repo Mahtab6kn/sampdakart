@@ -6,7 +6,7 @@ export default function OwnerImageSection() {
     <div className="bg-white mx-4 mt-0 lg:mx-8 lg:mt-8 flex flex-col lg:flex-row gap-8">
       <div className="w-full lg:w-1/3 flex justify-center animate-float">
         <Image
-          src="/home/owner-2.png"
+          src="/home/ramStatue.png"
           alt="Award Ceremony"
           width={500}
           height={500}

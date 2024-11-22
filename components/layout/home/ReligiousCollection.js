@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import ProductCarousel from "../products/ProductCarousel";
 import ProductListSkeleton from "@/components/ui/skeletons/product/ProductListSkeleton";
 
-async function getSareeProduct(params) {
+async function getReligiousProduct(params) {
   try {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/product/category/${params}`,
@@ -18,7 +18,7 @@ async function getSareeProduct(params) {
     if (!res.ok) {
       return {
         success: false,
-        message: "Failed to fetch saree product",
+        message: "Failed to fetch religious product",
         status: res.status,
         data: [],
       };
@@ -31,17 +31,17 @@ async function getSareeProduct(params) {
       data: data,
     };
   } catch (error) {
-    console.error("Error fetching saree product:", error);
+    console.error("Error fetching religious product:", error);
 
     return {
       success: false,
-      message: "An error occurred while fetching the saree product",
+      message: "An error occurred while fetching the religious product",
       data: [],
     };
   }
 }
-const SareeCollection = async () => {
-  const data = await getSareeProduct("religious");
+const ReligiousCollection = async () => {
+  const data = await getReligiousProduct("religious");
   if (data.length === 0) {
     return null;
   }
@@ -59,4 +59,4 @@ const SareeCollection = async () => {
   );
 };
 
-export default SareeCollection;
+export default ReligiousCollection;

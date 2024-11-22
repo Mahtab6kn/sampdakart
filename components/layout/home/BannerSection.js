@@ -5,9 +5,9 @@ const BannerSection = () => {
   return (
     <div className="w-full my-5 mx-auto px-5">
       <Image
-        src={"/home/ownerBanner.png"}
-        width={500}
-        height={500}
+        src={"/home/BannerImg.jpg"}
+        width={1000}
+        height={1000}
         className="w-full h-96"
       />
     </div>

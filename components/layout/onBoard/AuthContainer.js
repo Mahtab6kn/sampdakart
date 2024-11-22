@@ -7,7 +7,7 @@ import AuthOverlaySlider from "./AuthOverlaySlider";
 
 const AuthContainer = () => {
   const [isAnimated, setIsAnimated] = useState(false);
-  const overlayBg = "bg-blue-500";
+  const overlayBg = "bg-amber-500";
 
   return (
     <>

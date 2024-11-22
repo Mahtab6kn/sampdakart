@@ -16,6 +16,8 @@ import LehengaCollection from "@/components/layout/home/LehengaCollection";
 import SuitCollection from "@/components/layout/home/SuitCollection";
 import StateSection from "@/components/layout/home/StateSection";
 import BannerSection from "@/components/layout/home/BannerSection";
+import ReligiousCollection from "@/components/layout/home/ReligiousCollection";
+import MusicalCollection from "@/components/layout/home/MusicalCollection";
 // import DiscountSection from "@/components/layout/home/discount/DiscountSection";
 
 export default function Page() {
@@ -24,8 +26,8 @@ export default function Page() {
       <HeroSection />
       <CategoriesYouMayLike />
       <MostBookedProduct />
-      {/* <SareeCollection /> */}
-      {/* <LehengaCollection /> */}
+      <ReligiousCollection />
+      <MusicalCollection />
       {/* <SuitCollection /> */}
       <StateSection />
       {/* <WeOffer /> */}

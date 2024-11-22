@@ -76,7 +76,7 @@ const SigninForm = ({ isAnimated, setIsAnimated }) => {
   return (
     <div className="lg:w-3/4 w-11/12 max-w-md">
       <div className="flex flex-col justify-center items-center w-full space-y-10">
-        <h1 className="text-4xl font-bold text-blue-500">Welcome back!</h1>
+        <h1 className="text-4xl font-bold text-amber-500">Welcome back!</h1>
 
         <form className="mt-8 w-full" onSubmit={onSubmit} method="POST">
           <div className="space-y-8">
@@ -111,7 +111,7 @@ const SigninForm = ({ isAnimated, setIsAnimated }) => {
 
           <Link
             href={"/forgot-password"}
-            className="mt-4 block text-sm text-right font-medium text-blue-600 hover:underline focus:outline-none"
+            className="mt-4 block text-sm text-right font-medium text-amber-600 hover:underline focus:outline-none"
           >
             Forgot your password?
           </Link>
@@ -129,7 +129,7 @@ const SigninForm = ({ isAnimated, setIsAnimated }) => {
         <div>Don&apos;t have and account yet?</div>
 
         <button
-          className=" text-blue-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
+          className=" text-amber-600 hover:underline focus:outline-none font-medium underline hover:scale-105 transition-transform"
           onClick={(e) => {
             setIsAnimated(!isAnimated);
           }}
