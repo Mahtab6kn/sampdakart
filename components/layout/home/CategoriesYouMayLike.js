@@ -48,11 +48,8 @@ const CategoriesYouMayLike = async () => {
 
   return (
     <>
-      <div className="relative p-4 sm:p-8 bg-gray-50 space-y-12 text-center mb-10">
-        <SectionHeading
-          label="Categories You May Like"
-          className="text-[#FF8225]"
-        />
+      <div className="relative p-4 sm:p-8 bg-gray-50 space-y-6 text-center mb-10">
+        <SectionHeading label="Categories" className="text-[rgb(255,130,37)]" />
 
         <Suspense fallback={<CategoryListSkeleton />}>
           <CategoriesList categoryData={data.data} />

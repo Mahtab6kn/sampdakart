@@ -259,12 +259,9 @@ const Page = () => {
           <Select
             label="Select Category"
             name="category"
-            value={formData.category || ""}
+            value={formData.category}
             onChange={(e) => handleCategoryChange(e)}
           >
-            <Option value="" disabled>
-              Select a category
-            </Option>
             {categories.map((category) => (
               <Option key={category._id} value={category.name}>
                 {category.name}
@@ -289,7 +286,7 @@ const Page = () => {
         </div>
         <div className="w-full flex flex-col sm:flex-row items-center gap-4 h-full">
           <Input
-            label="Fabric"
+            label="Fabric/Material"
             name="fabric"
             value={formData.fabric}
             onChange={handleInputChange}

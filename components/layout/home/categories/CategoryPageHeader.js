@@ -31,10 +31,9 @@ const CategoryPageHeader = ({ category, cat }) => {
 
   return (
     <div className="pt-4 px-6">
-      <div className="w-full h-[111px]  sm:h-[400px] relative mb-5">
+      <div className=" hidden   lg:block w-full h-[111px]  sm:h-[400px] relative mb-5">
         <Image
           fill
-          // sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           src={"/home/sampdakart-banner.jpg"}
           alt="banner"
           className=" w-full  object-fill"
