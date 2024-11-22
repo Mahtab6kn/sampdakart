@@ -8,7 +8,13 @@ const BannerSection = () => {
         src={"/home/BannerImg.jpg"}
         width={1000}
         height={1000}
-        className="w-full h-96"
+        className="w-full h-96 hidden md:block"
+      />
+      <Image
+        src={"/mobBanner.jpg"}
+        width={1000}
+        height={1000}
+        className="w-full h-96 md:hidden"
       />
     </div>
   );

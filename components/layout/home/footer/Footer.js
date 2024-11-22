@@ -75,10 +75,11 @@ export default function Footer() {
             />
           </div>{" "}
           <p className="mb-6 text-white">
-            Welcome to Ghoting Tech Fabrics, a platform for seamless online
-            buying and selling. Join the exclusive Seller community to launch
-            your business and enjoy faster, more effective transactions
-            worldwide.
+            Sampdkart is a trusted platform specializing in selling{" "}
+            <strong>religious items</strong>, <strong>idols</strong>, and{" "}
+            <strong>musical instruments</strong>. We are dedicated to providing
+            high-quality products that enrich spiritual practices and celebrate
+            cultural heritage.
           </p>
         </div>
 
@@ -124,11 +125,11 @@ export default function Footer() {
             <strong>Contact Info</strong>
           </h3>
           <p className="text-white mb-4">
-            <strong>Phone:</strong> +91-111-222-3333
+            <strong>Phone:</strong> +91-912-005-3008
           </p>
           <p className="text-white mb-4">
-            <strong>Address:</strong> 1st Floor, S/460 , Bashant vihar Market,
-            near Panch Shiv Mandir, Kankarbagh Colony, Patna, Bihar 800020
+            <strong>Address:</strong> PNB Road Near Maniramdas Chhawani, Chhoti
+            Chhawani, Ayodhya, Uttar Pradesh 224123
           </p>
 
           <h3 className="text-xl font-semibold text-white mb-4">
@@ -150,8 +151,7 @@ export default function Footer() {
       <div className="border-t border-gray-200 py-4 mt-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm px-6">
           <span className="text-white">
-            &copy; Ghosting Tech © {new Date().getFullYear()}, All Rights
-            Reserved
+            &copy; Sampdkart © {new Date().getFullYear()}, All Rights Reserved
           </span>
 
           <div className="flex gap-1 mt-4 md:mt-0 text-white">

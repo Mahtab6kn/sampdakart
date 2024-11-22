@@ -165,15 +165,33 @@ const EditBlog = ({ open, setOpen, blog, setBlogs }) => {
             value={formData.type}
             onChange={(value) => setFormData({ ...formData, type: value })}
           >
-            <Option value="Fashion">Fashion</Option>
-            <Option value="Fashion Trends">Fashion Trends</Option>
-            <Option value="Seasonal Fashion">Seasonal Fashion</Option>
-            <Option value="Budget Fashion">Budget Fashion</Option>
-            <Option value="Business">Business</Option>
-            <Option value="Styling Tips">Styling Tips</Option>
-            <Option value="Celebrity Style">Celebrity Style</Option>
-            <Option value="Occasion Wear">Occasion Wear</Option>
-            <Option value="Outfit Inspiration">Outfit Inspiration</Option>
+            <Option value="Musical Instruments">Musical Instruments</Option>
+            <Option value="Instrument Reviews">Instrument Reviews</Option>
+            <Option value="Learning Guides">Learning Guides</Option>
+            <Option value="Instrument Maintenance">
+              Instrument Maintenance
+            </Option>
+            <Option value="Religious and Spiritual Items">
+              Religious and Spiritual Items
+            </Option>
+            <Option value="Symbolism and Significance">
+              Symbolism and Significance
+            </Option>
+            <Option value="Cultural Practices">Cultural Practices</Option>
+            <Option value="Meditation and Wellness">
+              Meditation and Wellness
+            </Option>
+            <Option value="History and Evolution">History and Evolution</Option>
+            <Option value="Handcrafted Stories">Handcrafted Stories</Option>
+            <Option value="Buying Guides">Buying Guides</Option>
+            <Option value="Rituals and Practices">Rituals and Practices</Option>
+            <Option value="Music Theory and Practice">
+              Music Theory and Practice
+            </Option>
+            <Option value="Artist Spotlights">Artist Spotlights</Option>
+            <Option value="Festivals and Traditions">
+              Festivals and Traditions
+            </Option>
           </Select>
           <Input
             label="Blog Title"
