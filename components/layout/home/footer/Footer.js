@@ -75,7 +75,7 @@ export default function Footer() {
             />
           </div>{" "}
           <p className="mb-6 mt-2 text-white">
-            Sampdkart is a trusted platform specializing in selling{" "}
+            Sampdakart is a trusted platform specializing in selling{" "}
             <strong>religious items</strong>, <strong>idols</strong>, and{" "}
             <strong>musical instruments</strong>. We are dedicated to providing
             high-quality products that enrich spiritual practices and celebrate
@@ -151,7 +151,7 @@ export default function Footer() {
       <div className="border-t border-gray-200 py-4 mt-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm px-6">
           <span className="text-white">
-            &copy; Sampdkart © {new Date().getFullYear()}, All Rights Reserved
+            &copy; Sampdakart © {new Date().getFullYear()}, All Rights Reserved
           </span>
 
           <div className="flex gap-1 mt-4 md:mt-0 text-white">
