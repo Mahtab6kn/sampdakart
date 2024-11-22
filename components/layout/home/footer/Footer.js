@@ -68,13 +68,13 @@ export default function Footer() {
         <div className="col-span-1">
           <div className="block sm:max-w-[280px] max-w-[200px]">
             <Image
-              src="/sampdakart-logo.png"
+              src="/footerlogo.png"
               alt="logo"
               width={1000}
               height={1000}
             />
           </div>{" "}
-          <p className="mb-6 text-white">
+          <p className="mb-6 mt-2 text-white">
             Sampdkart is a trusted platform specializing in selling{" "}
             <strong>religious items</strong>, <strong>idols</strong>, and{" "}
             <strong>musical instruments</strong>. We are dedicated to providing

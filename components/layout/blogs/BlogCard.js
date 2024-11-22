@@ -45,7 +45,7 @@ const BlogCard = ({
           />
         </div>
         <CardBody>
-          <div className="flex justify-between mb-3">
+          <div className="flex justify-between mb-3 gap-3 md:gap-5">
             <div className="text-center w-fit px-3 py-1 bg-amber-500 rounded-md text-sm text-white">
               {blog.type}
             </div>

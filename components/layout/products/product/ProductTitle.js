@@ -7,7 +7,7 @@ const ProductTitle = ({ title, price, discount }) => {
 
       <div className="flex items-end gap-1.5 pb-6">
         <p className="leading-none font-medium text-black">
-          ₹ <span>{(price - (discount / 100) * price).toFixed(2)}</span>
+          ₹ <span>{Math.round(price - (discount / 100) * price)}</span>
         </p>
 
         <p className="line-through text-xs leading-none">
