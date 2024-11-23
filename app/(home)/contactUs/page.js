@@ -28,10 +28,10 @@ const page = () => {
         <div className="flex ">
           <FaMapMarkerAlt className="text-amber-500 text-xl sm:text-lg mr-4" />
           <div>
-            <p className="font-semibold">Ghsoting Tech</p>
+            <p className="font-semibold">Sampdakart</p>
             <p>
-              1st Floor, S/460 , Bashant vihar Market, near Panch Shiv Mandir,
-              Kankarbagh Colony, Patna, Bihar 800020
+              PNB Road Near Maniramdas Chhawani, Chhoti Chhawani, Ayodhya,
+              Uttar Pradesh 224123
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ const page = () => {
           <FaPhoneAlt className="text-amber-500 text-base mr-4" />
           <div>
             <p>
-              Call: <span className="font-semibold">+91-111-222-3333</span>
+              Call: <span className="font-semibold">+91-912-005-3008</span>
             </p>
           </div>
         </div>
@@ -48,8 +48,7 @@ const page = () => {
           <IoMailSharp className="text-amber-500 text-lg mr-4" />
           <div>
             <p>
-              Mail:{" "}
-              <span className="font-semibold">ghostingtech@gmail.com</span>
+              Mail: <span className="font-semibold">sampdakart@gmail.com</span>
             </p>
           </div>
         </div>
