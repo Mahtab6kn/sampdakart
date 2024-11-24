@@ -35,8 +35,8 @@ const useCurrencyLocale = () => {
   useEffect(() => {
     const fetchCurrencyLocale = async () => {
       const currencyLocaleMap = {
-        US: { currency: "USD", locale: "en-US" },
         IN: { currency: "INR", locale: "en-IN" },
+        US: { currency: "USD", locale: "en-US" },
         GB: { currency: "GBP", locale: "en-GB" },
         CA: { currency: "CAD", locale: "en-CA" },
         AU: { currency: "AUD", locale: "en-AU" },
