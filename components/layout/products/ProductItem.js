@@ -29,6 +29,9 @@ const ProductItem = memo(
       subCategory,
     },
     isWishlist,
+    currency,
+    locale,
+    exchangeRate,
   }) => {
     const router = useRouter();
     const [isHovered, setIsHovered] = useState(false);
@@ -113,7 +116,14 @@ const ProductItem = memo(
           )}
 
           {title && price && (
-            <ProductTitle title={title} price={price} discount={discount} />
+            <ProductTitle
+              title={title}
+              price={price}
+              discount={discount}
+              currency={currency}
+              locale={locale}
+              exchangeRate={exchangeRate}
+            />
           )}
 
           {/* {sizes && (

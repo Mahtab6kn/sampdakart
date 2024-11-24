@@ -27,8 +27,62 @@ const useWindowSize = () => {
   return size;
 };
 
+const useCurrencyLocale = () => {
+  const [currency, setCurrency] = useState("INR");
+  const [locale, setLocale] = useState("en-IN");
+  const [exchangeRate, setExchangeRate] = useState(1);
+
+  useEffect(() => {
+    const fetchCurrencyLocale = async () => {
+      const currencyLocaleMap = {
+        US: { currency: "USD", locale: "en-US" },
+        IN: { currency: "INR", locale: "en-IN" },
+        GB: { currency: "GBP", locale: "en-GB" },
+        CA: { currency: "CAD", locale: "en-CA" },
+        AU: { currency: "AUD", locale: "en-AU" },
+        // Add more country mappings as needed
+      };
+
+      try {
+        // Fetch user's geolocation
+        const locationRes = await fetch("/api/geolocation");
+        const locationData = await locationRes.json();
+
+        if (locationData?.country) {
+          const { currency: userCurrency, locale: userLocale } =
+            currencyLocaleMap[locationData.country] || currencyLocaleMap.IN;
+
+          setCurrency(userCurrency);
+          setLocale(userLocale);
+
+          if (userCurrency !== "INR") {
+            // Fetch exchange rates
+            const ratesRes = await fetch("/api/exchange-rates");
+            const ratesData = await ratesRes.json();
+
+            if (
+              ratesData.conversion_rates &&
+              ratesData.conversion_rates[userCurrency]
+            ) {
+              setExchangeRate(ratesData.conversion_rates[userCurrency]);
+            } else {
+              console.error("Currency not found in response:", userCurrency);
+            }
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching location or rates:", error);
+      }
+    };
+
+    fetchCurrencyLocale();
+  }, []);
+
+  return { currency, locale, exchangeRate };
+};
 const ProductCarousel = ({ products, label = "" }) => {
   const [width] = useWindowSize();
+  const { currency, locale, exchangeRate } = useCurrencyLocale();
 
   const slides = useMemo(() => {
     let perSlide;
@@ -49,7 +103,13 @@ const ProductCarousel = ({ products, label = "" }) => {
 
   const renderSlides = () => {
     return slides.map((slideItems, index) => (
-      <ProductList key={index} products={slideItems} />
+      <ProductList
+        key={index}
+        products={slideItems}
+        currency={currency}
+        locale={locale}
+        exchangeRate={exchangeRate}
+      />
     ));
   };
 
