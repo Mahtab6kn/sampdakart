@@ -34,6 +34,16 @@ const CheckoutPage = () => {
   const { data: session, status } = useSession();
   const [paymentLoading, setPaymentLoading] = useState(false);
   const [disablePaymentButton, setDisableButton] = useState(false);
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
 
   useEffect(() => {
     const amount = Number(cart.totalPrice + 120).toFixed(2);
@@ -203,17 +213,24 @@ const CheckoutPage = () => {
           <div className="pt-4">
             <div className="flex justify-between mb-2">
               <span>Subtotal</span>
-              <span>₹{cart.totalPrice && Number(cart.totalPrice).toFixed(2)}</span>
+              <span>
+                {formatCurrency(
+                  (cart.totalPrice && Number(cart.totalPrice).toFixed(2)) *
+                    exchangeRate
+                )}
+              </span>
             </div>
 
             <div className="flex justify-between mb-2">
               <span>Delivery Service</span>
-              <span> ₹120</span>
+              <span> {formatCurrency(120 * exchangeRate)}</span>
             </div>
             {couponAmount > 0 && (
               <div className="flex justify-between mb-2">
                 <span>Discounted Amount</span>
-                <span className="text-teal-500">- ₹{couponAmount}</span>
+                <span className="text-teal-500">
+                  - {formatCurrency(couponAmount * exchangeRate)}
+                </span>
               </div>
             )}
 
@@ -221,7 +238,7 @@ const CheckoutPage = () => {
 
             <div className="flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>₹{totalAmount}</span>
+              <span>{formatCurrency(totalAmount * exchangeRate)}</span>
             </div>
           </div>
         </div>
@@ -274,7 +291,9 @@ const CheckoutPage = () => {
             disabled={disablePaymentButton}
             loading={paymentLoading}
           >
-            {paymentLoading ? "Proceeding to payment" : `Pay ₹${totalAmount}`}
+            {paymentLoading
+              ? "Proceeding to payment"
+              : `Pay ${formatCurrency(totalAmount * exchangeRate)}`}
           </Button>
         </div>
       </div>

@@ -9,6 +9,11 @@ import ProductList from "./ProductList";
 
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProductListSkeleton from "@/components/ui/skeletons/product/ProductListSkeleton";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setCurrencyLocale,
+  setExchangeRate,
+} from "@/redux/slice/currencySlice";
 
 const useWindowSize = () => {
   const [size, setSize] = useState([0, 0]);
@@ -28,38 +33,33 @@ const useWindowSize = () => {
 };
 
 const useCurrencyLocale = () => {
-  const [currency, setCurrency] = useState("INR");
-  const [locale, setLocale] = useState("en-IN");
-  const [exchangeRate, setExchangeRate] = useState(1);
+  const dispatch = useDispatch();
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
 
   useEffect(() => {
     const fetchCurrencyLocale = async () => {
       const currencyLocaleMap = {
         IN: { currency: "INR", locale: "en-IN" },
         US: { currency: "USD", locale: "en-US" },
-        GB: { currency: "GBP", locale: "en-GB" },
-        CA: { currency: "CAD", locale: "en-CA" },
-        AU: { currency: "AUD", locale: "en-AU" },
-        // Add more country mappings as needed
+        // Add other country mappings...
       };
 
       try {
-        // Fetch user's geolocation
         const locationRes = await fetch("/api/geolocation");
         const locationData = await locationRes.json();
 
-        console.log({ Data: locationData });
-
         if (locationData?.country) {
           const { currency: userCurrency, locale: userLocale } =
-            currencyLocaleMap[locationData.country];
+            currencyLocaleMap[locationData.country] || {};
 
           if (userCurrency && userLocale) {
-            setCurrency(userCurrency);
-            setLocale(userLocale);
+            dispatch(
+              setCurrencyLocale({ currency: userCurrency, locale: userLocale })
+            );
 
             if (userCurrency !== "INR") {
-              // Check localStorage for cached exchange rates
               const cachedRates = JSON.parse(
                 localStorage.getItem("exchangeRates")
               );
@@ -70,13 +70,11 @@ const useCurrencyLocale = () => {
               const isCacheValid =
                 cachedRates &&
                 cachedTimestamp &&
-                new Date().getTime() - cachedTimestamp < 24 * 60 * 60 * 1000; // 24-hour cache validity
+                new Date().getTime() - cachedTimestamp < 24 * 60 * 60 * 1000;
 
               if (isCacheValid) {
-                // Use cached exchange rate
-                setExchangeRate(cachedRates[userCurrency] || 1);
+                dispatch(setExchangeRate(cachedRates[userCurrency] || 1));
               } else {
-                // Fetch exchange rates and cache them
                 const ratesRes = await fetch("/api/exchange-rates");
                 const ratesData = await ratesRes.json();
 
@@ -90,25 +88,23 @@ const useCurrencyLocale = () => {
                     new Date().getTime()
                   );
 
-                  setExchangeRate(
-                    ratesData.conversion_rates[userCurrency] || 1
+                  dispatch(
+                    setExchangeRate(
+                      ratesData.conversion_rates[userCurrency] || 1
+                    )
                   );
-                } else {
-                  console.error("Exchange rates not found in response");
                 }
               }
             }
-          } else {
-            console.warn("Country not mapped in currencyLocaleMap");
           }
         }
       } catch (error) {
-        console.error("Error fetching location or rates:", error);
+        console.error("Error fetching data:", error);
       }
     };
 
     fetchCurrencyLocale();
-  }, []);
+  }, [dispatch]);
 
   return { currency, locale, exchangeRate };
 };
@@ -136,13 +132,7 @@ const ProductCarousel = ({ products, label = "" }) => {
 
   const renderSlides = () => {
     return slides.map((slideItems, index) => (
-      <ProductList
-        key={index}
-        products={slideItems}
-        currency={currency}
-        locale={locale}
-        exchangeRate={exchangeRate}
-      />
+      <ProductList key={index} products={slideItems} />
     ));
   };
 

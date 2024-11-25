@@ -1,12 +1,6 @@
 import ProductItem from "./ProductItem";
 
-const ProductList = ({
-  products,
-  isWishlist,
-  currency,
-  locale,
-  exchangeRate,
-}) => {
+const ProductList = ({ products, isWishlist }) => {
   return (
     <div className="grid gap-x-4 gap-y-10 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 py-10 md:py-20 px-4">
       {products?.map((product) => (
@@ -14,9 +8,6 @@ const ProductList = ({
           key={product._id}
           product={product}
           isWishlist={isWishlist}
-          currency={currency}
-          locale={locale}
-          exchangeRate={exchangeRate}
         />
       ))}
     </div>

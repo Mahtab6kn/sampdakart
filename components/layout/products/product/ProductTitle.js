@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 
-const ProductTitle = ({
-  title,
-  price,
-  discount,
-  currency,
-  locale,
-  exchangeRate,
-}) => {
+const ProductTitle = ({ title, price, discount }) => {
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+
   const convertedPrice = price * exchangeRate;
   const discountedPrice = convertedPrice - (discount / 100) * convertedPrice;
 
