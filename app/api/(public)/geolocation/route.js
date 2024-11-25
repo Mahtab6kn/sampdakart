@@ -2,7 +2,19 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   try {
-    const response = await fetch(`https://ipinfo.io/json?token=ab76a73d159b18`);
+    // Extract client IP from headers
+    const clientIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("remote-addr") ||
+      "";
+
+    // If no client IP, fallback to default (use server's IP)
+    const ip = clientIp || "me";
+
+    // Fetch location details for the extracted IP
+    const response = await fetch(
+      `https://ipinfo.io/${ip}/json?token=ab76a73d159b18`
+    );
 
     if (!response.ok) {
       throw new Error(`Failed to fetch location: ${response.statusText}`);

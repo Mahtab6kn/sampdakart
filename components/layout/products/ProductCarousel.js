@@ -47,28 +47,33 @@ const useCurrencyLocale = () => {
         // Fetch user's geolocation
         const locationRes = await fetch("/api/geolocation");
         const locationData = await locationRes.json();
+
         console.log({ Data: locationData });
 
         if (locationData?.country) {
           const { currency: userCurrency, locale: userLocale } =
-            currencyLocaleMap[locationData.country];
+            currencyLocaleMap[locationData.country] || {};
 
-          setCurrency(userCurrency);
-          setLocale(userLocale);
+          if (userCurrency && userLocale) {
+            setCurrency(userCurrency);
+            setLocale(userLocale);
 
-          if (userCurrency !== "INR") {
-            // Fetch exchange rates
-            const ratesRes = await fetch("/api/exchange-rates");
-            const ratesData = await ratesRes.json();
+            if (userCurrency !== "INR") {
+              // Fetch exchange rates
+              const ratesRes = await fetch("/api/exchange-rates");
+              const ratesData = await ratesRes.json();
 
-            if (
-              ratesData.conversion_rates &&
-              ratesData.conversion_rates[userCurrency]
-            ) {
-              setExchangeRate(ratesData.conversion_rates[userCurrency]);
-            } else {
-              console.error("Currency not found in response:", userCurrency);
+              if (
+                ratesData.conversion_rates &&
+                ratesData.conversion_rates[userCurrency]
+              ) {
+                setExchangeRate(ratesData.conversion_rates[userCurrency]);
+              } else {
+                console.error("Currency not found in response:", userCurrency);
+              }
             }
+          } else {
+            console.warn("Country not mapped in currencyLocaleMap");
           }
         }
       } catch (error) {
@@ -81,6 +86,7 @@ const useCurrencyLocale = () => {
 
   return { currency, locale, exchangeRate };
 };
+
 const ProductCarousel = ({ products, label = "" }) => {
   const [width] = useWindowSize();
   const { currency, locale, exchangeRate } = useCurrencyLocale();
