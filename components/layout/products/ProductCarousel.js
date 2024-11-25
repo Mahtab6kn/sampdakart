@@ -52,24 +52,50 @@ const useCurrencyLocale = () => {
 
         if (locationData?.country) {
           const { currency: userCurrency, locale: userLocale } =
-            currencyLocaleMap[locationData.country] || {};
+            currencyLocaleMap[locationData.country];
 
           if (userCurrency && userLocale) {
             setCurrency(userCurrency);
             setLocale(userLocale);
 
             if (userCurrency !== "INR") {
-              // Fetch exchange rates
-              const ratesRes = await fetch("/api/exchange-rates");
-              const ratesData = await ratesRes.json();
+              // Check localStorage for cached exchange rates
+              const cachedRates = JSON.parse(
+                localStorage.getItem("exchangeRates")
+              );
+              const cachedTimestamp = localStorage.getItem(
+                "exchangeRatesTimestamp"
+              );
 
-              if (
-                ratesData.conversion_rates &&
-                ratesData.conversion_rates[userCurrency]
-              ) {
-                setExchangeRate(ratesData.conversion_rates[userCurrency]);
+              const isCacheValid =
+                cachedRates &&
+                cachedTimestamp &&
+                new Date().getTime() - cachedTimestamp < 24 * 60 * 60 * 1000; // 24-hour cache validity
+
+              if (isCacheValid) {
+                // Use cached exchange rate
+                setExchangeRate(cachedRates[userCurrency] || 1);
               } else {
-                console.error("Currency not found in response:", userCurrency);
+                // Fetch exchange rates and cache them
+                const ratesRes = await fetch("/api/exchange-rates");
+                const ratesData = await ratesRes.json();
+
+                if (ratesData.conversion_rates) {
+                  localStorage.setItem(
+                    "exchangeRates",
+                    JSON.stringify(ratesData.conversion_rates)
+                  );
+                  localStorage.setItem(
+                    "exchangeRatesTimestamp",
+                    new Date().getTime()
+                  );
+
+                  setExchangeRate(
+                    ratesData.conversion_rates[userCurrency] || 1
+                  );
+                } else {
+                  console.error("Exchange rates not found in response");
+                }
               }
             }
           } else {
