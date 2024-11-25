@@ -47,10 +47,11 @@ const useCurrencyLocale = () => {
         // Fetch user's geolocation
         const locationRes = await fetch("/api/geolocation");
         const locationData = await locationRes.json();
+        console.log({ Data: locationData });
 
         if (locationData?.country) {
           const { currency: userCurrency, locale: userLocale } =
-            currencyLocaleMap[locationData.country] || currencyLocaleMap.IN;
+            currencyLocaleMap[locationData.country];
 
           setCurrency(userCurrency);
           setLocale(userLocale);
