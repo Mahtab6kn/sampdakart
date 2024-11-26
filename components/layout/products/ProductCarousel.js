@@ -34,16 +34,37 @@ const useWindowSize = () => {
 
 const useCurrencyLocale = () => {
   const dispatch = useDispatch();
-  const { currency, locale, exchangeRate } = useSelector(
-    (state) => state.currency
-  );
 
   useEffect(() => {
     const fetchCurrencyLocale = async () => {
       const currencyLocaleMap = {
         IN: { currency: "INR", locale: "en-IN" },
         US: { currency: "USD", locale: "en-US" },
-        // Add other country mappings...
+        GB: { currency: "GBP", locale: "en-GB" },
+        CA: { currency: "CAD", locale: "en-CA" },
+        AU: { currency: "AUD", locale: "en-AU" },
+        AE: { currency: "AED", locale: "en-AE" },
+        SG: { currency: "SGD", locale: "en-SG" },
+        JP: { currency: "JPY", locale: "ja-JP" },
+        DE: { currency: "EUR", locale: "de-DE" },
+        FR: { currency: "EUR", locale: "fr-FR" },
+        IT: { currency: "EUR", locale: "it-IT" },
+        ES: { currency: "EUR", locale: "es-ES" },
+        CH: { currency: "CHF", locale: "de-CH" },
+        CN: { currency: "CNY", locale: "zh-CN" },
+        HK: { currency: "HKD", locale: "en-HK" },
+        ZA: { currency: "ZAR", locale: "en-ZA" },
+        BR: { currency: "BRL", locale: "pt-BR" },
+        RU: { currency: "RUB", locale: "ru-RU" },
+        SA: { currency: "SAR", locale: "ar-SA" },
+        KR: { currency: "KRW", locale: "ko-KR" },
+        MX: { currency: "MXN", locale: "es-MX" },
+        MY: { currency: "MYR", locale: "ms-MY" },
+        TH: { currency: "THB", locale: "th-TH" },
+        SE: { currency: "SEK", locale: "sv-SE" },
+        NO: { currency: "NOK", locale: "nb-NO" },
+        DK: { currency: "DKK", locale: "da-DK" },
+        NZ: { currency: "NZD", locale: "en-NZ" },
       };
 
       try {
@@ -105,13 +126,11 @@ const useCurrencyLocale = () => {
 
     fetchCurrencyLocale();
   }, [dispatch]);
-
-  return { currency, locale, exchangeRate };
 };
 
 const ProductCarousel = ({ products, label = "" }) => {
   const [width] = useWindowSize();
-  const { currency, locale, exchangeRate } = useCurrencyLocale();
+  useCurrencyLocale();
 
   const slides = useMemo(() => {
     let perSlide;
