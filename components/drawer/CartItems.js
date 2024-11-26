@@ -4,7 +4,7 @@ import { Button } from "@material-tailwind/react";
 
 import { toast } from "sonner";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import ImageContainer from "../ui/ImageContainer";
 import CartQuantityButton from "./CartQuantityButton";
@@ -13,6 +13,16 @@ import { removeItemFromCart } from "@/redux/slice/cartSlice";
 
 const CartItems = ({ data }) => {
   const dispatch = useDispatch();
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
 
   const [loading, setLoading] = useState(false);
 
@@ -71,14 +81,20 @@ const CartItems = ({ data }) => {
         <div>
           <div className="flex gap-1 items-center">
             <p className="text-green-500 font-medium">
-              ₹{" "}
+              {" "}
               <span>
-                {(data.price - (data.discount * data.price) / 100).toFixed(2)}
+                {formatCurrency(
+                  (data.price - (data.discount * data.price) / 100).toFixed(2) *
+                    exchangeRate
+                )}
               </span>
             </p>
 
             <p className="text-xs line-through">
-              ₹ <span>{data.price.toFixed(2)}</span>
+              {" "}
+              <span>
+                {formatCurrency(data.price.toFixed(2) * exchangeRate)}
+              </span>
             </p>
           </div>
 

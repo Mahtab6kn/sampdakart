@@ -1,6 +1,7 @@
 import { Card, CardBody } from "@material-tailwind/react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const statusColors = {
   confirmed: " text-blue-800",
@@ -12,6 +13,16 @@ const statusColors = {
 const OrderCard = ({ order }) => {
   const status = order.status;
   const [formattedDate, setFormattedDate] = useState("");
+
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
 
   useEffect(() => {
     setFormattedDate(
@@ -41,11 +52,17 @@ const OrderCard = ({ order }) => {
             <div>Total Products: {order.cartItems.length}</div>
           )}
           <div className="flex items-center gap-2">
-            Total Amount: <div className="text-teal-500">₹{order.totalAmount.toFixed(2)}</div>
+            Total Amount:{" "}
+            <div className="text-teal-500">
+              {formatCurrency(order.totalAmount.toFixed(2) * exchangeRate)}
+            </div>
           </div>
           <div>
             Status:{" "}
-            <span className={`${statusColors[status]} capitalize`}> {order.status}</span>
+            <span className={`${statusColors[status]} capitalize`}>
+              {" "}
+              {order.status}
+            </span>
           </div>
         </CardBody>
       </Card>

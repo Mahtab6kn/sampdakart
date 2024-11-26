@@ -25,7 +25,16 @@ const CartDrawer = () => {
   const cart = useSelector((state) => state.cart);
 
   const [loading, setLoading] = useState(true);
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
 
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
   const fetchCartItems = async () => {
     try {
       const res = await fetch(
@@ -125,8 +134,10 @@ const CartDrawer = () => {
               <p>₹0</p>
             ) : (
               <p>
-                {" ₹"}
-                {cart.totalPrice ? Number(cart.totalPrice).toFixed(2) : "0"}
+                {formatCurrency(
+                  (cart.totalPrice ? Number(cart.totalPrice).toFixed(2) : "0") *
+                    exchangeRate
+                )}
               </p>
             )}
           </Typography>
