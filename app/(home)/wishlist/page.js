@@ -44,8 +44,7 @@ const getWishlist = async (page, size) => {
     };
   }
 };
-
-const WishlistPage = () => {
+const WishlistPageContent = () => {
   const searchParams = useSearchParams();
 
   const page = parseInt(searchParams.get("page")) || 1;
@@ -68,31 +67,34 @@ const WishlistPage = () => {
 
   if (!wishlistData.success) {
     return (
-      <main className="flex flex-col min-h-screen">
-        <div className="my-10 text-xl font-semibold">
-          {wishlistData.message}
-        </div>
-      </main>
+      <div className="my-10 text-xl font-semibold">{wishlistData.message}</div>
     );
   }
 
   return (
+    <>
+      <Heading
+        icon={
+          <div className="bg-gradient-to-r from-red-400 to-pink-400 p-1 rounded-full inline-block">
+            <IoIosHeart size={18} color="white" />
+          </div>
+        }
+        title={"Your Wishlists"}
+      />
+
+      <ProductList products={wishlistData.data} isWishlist={false} />
+      <PaginationBtn totalPages={wishlistData.meta.totalPages} />
+    </>
+  );
+};
+
+const WishlistPage = () => {
+  return (
     <main className="flex flex-col min-h-screen">
       <div className="flex-grow mx-4 my-5 flex flex-col gap-5">
-        <Heading
-          icon={
-            <div className="bg-gradient-to-r from-red-400 to-pink-400 p-1 rounded-full inline-block">
-              <IoIosHeart size={18} color="white" />
-            </div>
-          }
-          title={"Your Wishlists"}
-        />
-
         <Suspense fallback={<ProductListSkeleton />}>
-          <ProductList products={wishlistData.data} isWishlist={false} />
+          <WishlistPageContent />
         </Suspense>
-
-        <PaginationBtn totalPages={wishlistData.meta.totalPages} />
       </div>
     </main>
   );
