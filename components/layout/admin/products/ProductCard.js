@@ -9,12 +9,22 @@ import { CardBody, Button } from "@material-tailwind/react";
 import Link from "next/link";
 import Image from "next/image";
 import { FaBoxes } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 export function ProductCard({
   product,
   setOpenDeleteDialog,
   setSelectedProduct,
 }) {
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
   return (
     <div className="group relative h-[32rem] flex flex-col justify-between overflow-hidden">
       <Image
@@ -81,14 +91,17 @@ export function ProductCard({
         <div className="flex justify-between items-center">
           <div className="flex gap-1 items-center">
             <div className="text-pink-500 font-semibold">
-              ₹
-              {(
-                product.price -
-                (product.discount / 100) * product.price
-              ).toFixed(2)}
+              {formatCurrency(
+                (
+                  product.price -
+                  (product.discount / 100) * product.price
+                ).toFixed(2) * exchangeRate
+              )}
             </div>
 
-            <div className="text-xs line-through">₹{product.price}</div>
+            <div className="text-xs line-through">
+              {formatCurrency(product.price * exchangeRate)}
+            </div>
           </div>
 
           <div className="flex gap-1 items-center">

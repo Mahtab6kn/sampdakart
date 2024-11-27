@@ -28,6 +28,16 @@ const ListOfCoupon = ({
       toast.error("Error fetching coupons");
     }
   };
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
   const cart = useSelector((state) => state.cart);
   useEffect(() => {
     fetchCoupons();
@@ -47,8 +57,7 @@ const ListOfCoupon = ({
     }
 
     // Calculate the discount amount
-    let discountAmount =
-      (Number(coupon.discount) / 100) * Number(totalAmount);
+    let discountAmount = (Number(coupon.discount) / 100) * Number(totalAmount);
 
     // Ensure the discount does not exceed the maximum amount allowed by the coupon
     if (discountAmount > Number(coupon.maxAmt)) {
@@ -102,14 +111,22 @@ const ListOfCoupon = ({
                 <p className="text-xs text-pink-500">
                   {cart.totalPrice < coupon.minAmt ? (
                     <span>
-                      Purchase ₹{coupon.minAmt - cart.totalPrice} to get this
-                      coupon!
+                      Purchase{" "}
+                      {formatCurrency(
+                        (coupon.minAmt - cart.totalPrice) * exchangeRate
+                      )}{" "}
+                      to get this coupon!
                     </span>
                   ) : (
-                    <span>Min spent ₹{coupon.minAmt}</span>
+                    <span>
+                      Min spent {formatCurrency(coupon.minAmt * exchangeRate)}
+                    </span>
                   )}
                 </p>{" "}
-                |<p className="text-sm text-teal-700">Up to ₹{coupon.maxAmt}</p>
+                |
+                <p className="text-sm text-teal-700">
+                  Up to {formatCurrency(coupon.maxAmt * exchangeRate)}
+                </p>
               </div>
             </div>
             <Button

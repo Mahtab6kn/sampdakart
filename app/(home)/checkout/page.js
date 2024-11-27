@@ -223,13 +223,13 @@ const CheckoutPage = () => {
 
             <div className="flex justify-between mb-2">
               <span>Delivery Service</span>
-              <span> {formatCurrency(120 * exchangeRate)}</span>
+              <span> {formatCurrency(120) * exchangeRate}</span>
             </div>
             {couponAmount > 0 && (
               <div className="flex justify-between mb-2">
                 <span>Discounted Amount</span>
                 <span className="text-teal-500">
-                  - {formatCurrency(couponAmount * exchangeRate)}
+                  - {formatCurrency(couponAmount) * exchangeRate}
                 </span>
               </div>
             )}
@@ -238,7 +238,7 @@ const CheckoutPage = () => {
 
             <div className="flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>{formatCurrency(totalAmount * exchangeRate)}</span>
+              <span>{formatCurrency(totalAmount) * exchangeRate}</span>
             </div>
           </div>
         </div>
@@ -293,7 +293,7 @@ const CheckoutPage = () => {
           >
             {paymentLoading
               ? "Proceeding to payment"
-              : `Pay ${formatCurrency(totalAmount * exchangeRate)}`}
+              : `Pay ${formatCurrency(totalAmount) * exchangeRate}`}
           </Button>
         </div>
       </div>

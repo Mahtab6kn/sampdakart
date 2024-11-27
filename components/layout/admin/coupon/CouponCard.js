@@ -3,9 +3,20 @@ import DeleteCoupon from "@/components/modals/admin/coupon/DeleteCoupon";
 import React, { useState } from "react";
 import { IoMdCopy } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
+import { useSelector } from "react-redux";
 import { toast } from "sonner";
 
 const CouponCard = ({ coupon, setCouponCode }) => {
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
+
   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
 
   const copy = () => {
@@ -37,7 +48,7 @@ const CouponCard = ({ coupon, setCouponCode }) => {
           <span className="text-gray-100">MAX: </span>
 
           <span className="text-red-400 font-medium">
-            <span>&#8377;</span> {coupon.maxAmt}.00
+            <span></span> {formatCurrency(coupon.maxAmt * exchangeRate)}
           </span>
         </div>
 
@@ -54,8 +65,8 @@ const CouponCard = ({ coupon, setCouponCode }) => {
           <p className="text-sm w-full">Min Purchase</p>
 
           <p className="text-green-400 font-bold">
-            <span>&#8377;</span>
-            {coupon.minAmt}.00
+            <span></span>
+            {formatCurrency(coupon.minAmt * exchangeRate)}
           </p>
         </div>
       </div>

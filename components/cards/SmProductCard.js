@@ -1,8 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import ImageContainer from "../ui/ImageContainer";
+import { useSelector } from "react-redux";
 
 const SmProductCard = ({ product, qty, size, color, colorHex }) => {
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
   const amt = product.price - (product.price * product.discount) / 100;
   return (
     <div className="bg-white border shadow-md rounded-lg overflow-hidden mb-2 relative w-full">
@@ -21,15 +31,16 @@ const SmProductCard = ({ product, qty, size, color, colorHex }) => {
             <div className="flex gap-1 flex-col w-full">
               <div className="flex flex-col gap-1 justify-between">
                 <p className="text-sm text-teal-500 font-bold">
-                  &#x20B9;{amt}{" "}
+                  {formatCurrency(amt * exchangeRate)}{" "}
                   <span className="line-through text-gray-400">
-                    &#x20B9;{product.price.toFixed(2)}
+                    {formatCurrency(product.price.toFixed(2) * exchangeRate)}
                   </span>
                 </p>
                 <p className="text-sm text-gray-500">Quantity: {qty}</p>
               </div>
               <p className="text-sm text-gray-500 flex items-center gap-1">
-                <div className="hidden md:block">Size & Color: </div><div className="uppercase">{size}</div> | 
+                <div className="hidden md:block">Size & Color: </div>
+                <div className="uppercase">{size}</div> |
                 <div
                   className="w-3 h-3 rounded-full"
                   style={{ background: `${colorHex}` }}

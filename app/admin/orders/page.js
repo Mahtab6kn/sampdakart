@@ -22,6 +22,7 @@ import PaginationBtn from "@/components/ui/PaginationBtn";
 import Link from "next/link";
 import { AiOutlineLoading } from "react-icons/ai";
 import AcceptOrder from "@/components/layout/admin/orders/AcceptOrder";
+import { useSelector } from "react-redux";
 
 const statusColors = {
   confirmed: "bg-blue-100 text-blue-800",
@@ -31,6 +32,15 @@ const statusColors = {
 };
 
 const AdminOrders = () => {
+  const { currency, locale, exchangeRate } = useSelector(
+    (state) => state.currency
+  );
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat(locale, {
+      style: "currency",
+      currency,
+    }).format(amount);
+  };
   const searchParams = useSearchParams();
 
   const [meta, setMeta] = useState({});
@@ -190,7 +200,9 @@ const AdminOrders = () => {
                       color="blue-gray"
                       className="font-normal"
                     >
-                      &#8377;{parseFloat(order.totalAmount).toFixed(2)}
+                      {formatCurrency(
+                        parseFloat(order.totalAmount).toFixed(2) * exchangeRate
+                      )}
                     </Typography>
                   </td>
 
