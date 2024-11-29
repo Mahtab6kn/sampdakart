@@ -7,11 +7,11 @@ export default function RefundPolicy() {
         Return & Refund Policy
       </div>
       <div className="text-gray-700 leading-relaxed">
-        Once we receive and inspect your return, we’ll notify you whether your
-        refund request has been approved. If approved, the refund will be
-        processed automatically using your original payment method. Please allow
-        some time for your bank or credit card provider to complete the
-        transaction.
+        We will notify you once we’ve received and inspected your return, and
+        let you know if the refund was approved or not. If approved, you’ll be
+        automatically refunded on your original payment method. Please remember
+        it can take some time for your bank or credit card company to process
+        and post the refund too.
       </div>
 
       <ul className="space-y-3 text-gray-700">
@@ -20,22 +20,22 @@ export default function RefundPolicy() {
           order.
         </li>
         <li className="flex items-center gap-2">
-          Refunds are typically processed within 7 to 15 business days.
+          It takes 7 to 15 Business Days to refund the amount{" "}
         </li>
       </ul>
       <ul className="space-y-3 text-gray-700">
         <li className="flex items-center gap-2">
           <MapPinIcon className="w-5 h-5 text-teal-500" />
-          Address: 1st Floor, S/460 , Bashant vihar Market, near Panch Shiv
-          Mandir, Kankarbagh Colony, Patna, Bihar 800020
+          Address: PNB Road Near Maniramdas Chhawani Chhoti Chhawani Ayodhya,
+          Uttar Pradesh 224123
         </li>
         <li className="flex items-center gap-2">
           <PhoneIcon className="w-5 h-5 text-teal-500" />
-          Phone: +91111222333
+          Phone: +9120053008
         </li>
         <li className="flex items-center gap-2">
           <EnvelopeIcon className="w-5 h-5 text-teal-500" />
-          Email: ghostingtech@gmail.com
+          Email: sampdakart@gmail.com
         </li>
       </ul>
     </div>
