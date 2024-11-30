@@ -84,10 +84,10 @@ const AddToCartBtn = ({
     e.stopPropagation();
     e.preventDefault();
 
-    if (productColor === null || productSize === null) {
-      toast.warning("Please select product size and color");
-      return;
-    }
+    // if (productColor === null || productSize === null) {
+    //   toast.warning("Please select product size and color");
+    //   return;
+    // }
 
     const product = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}/user/cart`,

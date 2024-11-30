@@ -34,7 +34,7 @@ export default function RefundPolicy() {
         The credit will typically be processed within{" "}
         <strong className="text-gray-800">7 to 15 business days</strong>.
         However, please remember that it may take additional time for your bank
-        or credit card company to reflect the refund in your account.
+        or credit to reflect the refund in your account.
       </p>
 
       <h2 className="text-2xl font-semibold text-gray-700 border-b pb-2 mb-4">

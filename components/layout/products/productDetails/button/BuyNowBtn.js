@@ -28,10 +28,10 @@ const BuyNowBtn = ({
   const handleButtonClick = async (e) => {
     e.stopPropagation();
     e.preventDefault();
-    if (productColor === null || productSize === null) {
-      toast.warning("Please select product size and color");
-      return;
-    }
+    // if (productColor === null || productSize === null) {
+    //   toast.warning("Please select product size and color");
+    //   return;
+    // }
 
     const existingCartItem = cart.items.find((item) => {
       return (

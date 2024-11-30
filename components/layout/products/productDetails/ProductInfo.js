@@ -36,10 +36,10 @@ function ProductInfo({ product }) {
       return;
     }
 
-    if (selectedSize === null) {
-      toast.warning("select size");
-      return;
-    }
+    // if (selectedSize === null) {
+    //   toast.warning("select size");
+    //   return;
+    // }
     setSelectedColor(color.toLowerCase());
     setSelectedColorHex(hex);
   };
