@@ -42,18 +42,18 @@ async function getMusicalProduct(params) {
 }
 const MusicalCollection = async () => {
   const data = await getMusicalProduct("musical");
-  if (data.length === 0) {
+  if (!data.success || !data.data || data.data.data.length === 0) {
+    // Return null if data is unavailable or empty
     return null;
   }
+
   return (
     <>
       <Suspense fallback={<ProductListSkeleton />}>
-        {data.data && (
-          <ProductCarousel
-            products={data.data.data}
-            label="Musical Instrument Collection"
-          />
-        )}
+        <ProductCarousel
+          products={data.data.data}
+          label="Musical Instrument Collection"
+        />
       </Suspense>
     </>
   );

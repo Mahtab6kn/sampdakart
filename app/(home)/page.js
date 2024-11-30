@@ -27,7 +27,7 @@ export default function Page() {
       <CategoriesYouMayLike />
       <MostBookedProduct />
       <ReligiousCollection />
-      {/* <MusicalCollection /> */}
+      <MusicalCollection />
       {/* <SuitCollection /> */}
       <StateSection />
       {/* <WeOffer /> */}
