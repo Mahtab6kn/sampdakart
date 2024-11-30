@@ -14,6 +14,7 @@ export default function Footer() {
       { href: "/privacy-policy", text: "Privacy Policy" },
       { href: "/terms-and-condition", text: "Terms Of Condition" },
       { href: "/refund-policy", text: "Refund Policy" },
+      { href: "/return-policy", text: "Return Policy" },
       { href: "/shipping-policy", text: "Shipping Policy" },
       { href: "/blogs", text: "Blogs" },
       { href: "/contactUs", text: "Contact Us" },
@@ -131,7 +132,6 @@ export default function Footer() {
             <strong>Address:</strong> PNB Road Near Maniramdas Chhawani, Chhoti
             Chhawani, Ayodhya, Uttar Pradesh 224123
           </p>
-
           <h3 className="text-xl font-semibold text-white mb-4">
             <strong> Follow Us !!</strong>{" "}
           </h3>
@@ -146,6 +146,9 @@ export default function Footer() {
               <FaYoutube className="text-[#FF0000] hover:scale-110 transition duration-300" />
             </Link>
           </div>
+          <h3 className="text-xl font-semibold text-amber-900 mt-4">
+            <strong> SRD EXPORTS</strong>{" "}
+          </h3>{" "}
         </div>
       </div>
       <div className="border-t border-gray-200 py-4 mt-4">

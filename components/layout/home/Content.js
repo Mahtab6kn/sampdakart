@@ -149,10 +149,10 @@ export default function Content() {
         <p className="text-gray-600">
           Explore a world where music and spirituality intertwine. From finely
           tuned musical instruments to intricately crafted religious statues,
-          our collection invites you to celebrate tradition and creativity. At
-          [Your Store Name], every product tells a story of dedication and
-          artistry. Join us in preserving cultural heritage and enriching lives
-          through our exceptional offerings.
+          our collection invites you to celebrate tradition and creativity.Every
+          product tells a story of dedication and artistry. Join us in
+          preserving cultural heritage and enriching lives through our
+          exceptional offerings.
         </p>
       </div>
     </>
